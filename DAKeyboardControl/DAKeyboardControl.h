@@ -22,6 +22,10 @@ typedef void (^DAKeyboardDidMoveBlock)(CGRect keyboardFrameInView);
  user's finger "engages" the keyboard.
  */
 @property (nonatomic) CGFloat keyboardTriggerOffset;
+@property (nonatomic) CGFloat keyboardHeight;
+@property (nonatomic, assign) UIView *keyboardActiveView;
+@property (nonatomic, assign) UIView *gestureView;
+@property (nonatomic, assign) UIResponder *keyboardActiveInput;
 @property (nonatomic, readonly) BOOL keyboardWillRecede;
 
 /** Adding pan-to-dismiss (functionality introduced in iMessages)
@@ -51,6 +55,11 @@ typedef void (^DAKeyboardDidMoveBlock)(CGRect keyboardFrameInView);
 
 /** Convenience method to dismiss the keyboard */
 - (void)hideKeyboard;
+
+- (void)addPanGesture;
+- (void)addKeyboardNotifications;
+- (void)removeKeyboardNotifications;
+- (void)setupWithTextField:(id)field;
 
 @end
 

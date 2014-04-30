@@ -55,7 +55,7 @@
     
     
     self.view.keyboardTriggerOffset = toolBar.bounds.size.height;
-    
+    [self.view addPanGesture];
     [self.view addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView) {
         /* 
          Try not to call "self" inside this block (retain cycle).
